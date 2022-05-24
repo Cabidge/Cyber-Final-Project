@@ -21,7 +21,7 @@ program's memory.
 
 We will be trying to attack a very simple c program (source code can be found in simple/main.c)
 
-```
+```c
 #include <stdio.h>
 
 void hello() {
