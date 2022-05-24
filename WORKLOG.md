@@ -15,3 +15,7 @@ Wen Hao - Created a simple buffer overflow vulnerable program in `simple/`.
 Wen Hao - Started writing the presentation.  
 
 Yuqing - Started writing example section of presentation.
+
+### 5/24
+Wen Hao - Researched buffer overflow on 64 bit architectures.
+Started setting up a virtual machine--got ssh'ing to work.
