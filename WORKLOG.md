@@ -33,5 +33,5 @@ Started setting up a virtual machine--got ssh'ing to work.
 Yuqing - Mostly finished gdb example presentation.
 
 ### 5/25
-Wen Hao - Added information about gdb + gef on slides.
+Wen Hao - Added information about gdb + gef on slides.  
 Yuqing - Added more images demonstrating how gdb works with examples. Fixing formats.
