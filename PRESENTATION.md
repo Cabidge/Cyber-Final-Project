@@ -17,6 +17,36 @@ possible for us to manipulate the program to execute a function that wasn't
 meant to be executed, or even execute code that we ourselves inject into the
 program's memory.
 
+# GDB
+
+GDB (**G**NU **D**e**b**ugger) is a useful program that allows us to "peak"
+inside a program and check out areas of memory, namely values stored in
+registers.
+
+Being able to peer inside memory is supremely useful if you're attempting to
+perform a buffer overflow attack and you happen to have access to the actual
+program.
+
+![GDB](https://user-images.githubusercontent.com/38366553/170348178-e19fe05b-6be3-43a9-8ddf-437a15dfce49.png)
+
+You can try installing it from [this website](https://www.sourceware.org/gdb/download/)
+or, if you're using a Debian based linux distro, a simple apt install will do
+```console
+$ sudo apt install gdb
+```
+
+# GEF
+
+GEF (**G**DB **E**nhanced **F**eatures) has all the same features as GDB, but
+with a little extra which will be handy for performing a buffer overflow attack.
+
+Installing GEF is fairly simple, as all you need to do is run the following command:
+```
+$ curl -fsSL http://gef.blah.cat/sh | bash -c
+```
+
+[Read more](https://gef.readthedocs.io/en/master/)
+
 # Using gdb to perform a simple buffer overflow attack
 
 We will be trying to attack a very simple c program (source code can be found in simple/main.c)
