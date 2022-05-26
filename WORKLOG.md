@@ -39,3 +39,6 @@ Yuqing - Mostly finished gdb example presentation.
 Wen Hao - Added information about gdb + gef on slides.  
 
 Yuqing - Added more images demonstrating how gdb works with examples. Fixing formats.
+
+### 5/26  
+Yuqing - Added explainations on some of the things that may be confusing for presentation. 
