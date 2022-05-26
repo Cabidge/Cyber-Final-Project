@@ -2,6 +2,9 @@
 ### Buffer overflow on 64 bit
 - https://medium.com/@buff3r/basic-buffer-overflow-on-64-bit-architecture-3fb74bab3558
 
+### Disabling ASLR
+- https://askubuntu.com/questions/318315/how-can-i-temporarily-disable-aslr-address-space-layout-randomization
+
 ### Helpful VM Resources
 - https://infosecwriteups.com/how-to-make-our-own-ctf-challenge-with-ease-6b15f76865b5
 - https://medium.com/platform-engineer/port-forwarding-for-ssh-http-on-virtualbox-459277a888be
