@@ -124,7 +124,11 @@ example:
 ```console
 $ python3 -c "print('A'*(32+8)+'\x69\x51\x55\x55\x55\x55\x00\x00')" > input.txt
 ```
-We need to add 8 bytes to the end of the buffer before we put the address because of how things are stored in 64-bit machines. We have to first overwrite rbp (which is 8 bytes address) to reach where the saved return address is and that's what we want to overwrite because that's where the program looks for when determining where it's going next.  
+We need to add 8 bytes to the end of the buffer before we put the address because of how things are stored in 64-bit machines.   
+
+<img width="512" alt="image" src="https://user-images.githubusercontent.com/64151468/170560753-e621cecd-e8db-4b79-8832-83fcde06abe4.png">
+
+We have to first overwrite rbp (which is 8 bytes address) to reach where the saved return address is and that's what we want to overwrite because that's where the program looks for when determining where it's going next.  
 
 8. Run program in gdb with the input file.
 
