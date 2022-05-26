@@ -68,6 +68,7 @@ int main() {
 }
 ```
 In this attack, we will make the function print hello even though the hello() function is not called in main().
+To actually be able to attack program with buffer overflow we have to compile with the ``` -fno-stack-protector``` flag because gcc is smart doesn't allow you to go over buffer. 
 
 1. Start gdb  
    ```console
@@ -123,6 +124,8 @@ example:
 ```console
 $ python3 -c "print('A'*(32+8)+'\x69\x51\x55\x55\x55\x55\x00\x00')" > input.txt
 ```
+We need to add 8 bytes to the end of the buffer before we put the address because of how things are stored in 64-bit machines. We have to first overwrite rbp (which is 8 bytes address) to reach where the saved return address is and that's what we want to overwrite because that's where the program looks for when determining where it's going next.  
+
 8. Run program in gdb with the input file.
 
     ```console
