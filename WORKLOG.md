@@ -42,3 +42,6 @@ Yuqing - Added more images demonstrating how gdb works with examples. Fixing for
 
 ### 5/26  
 Yuqing - Added explainations on some of the things that may be confusing for presentation. 
+
+### 5/27  
+Yuqing - Added pictures explaining endianess and cyclic patterns.
