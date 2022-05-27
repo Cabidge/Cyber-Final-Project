@@ -72,7 +72,7 @@ To actually be able to attack program with buffer overflow we have to compile wi
 
 1. Start gdb  
    ```console
-   gdb <exec>
+   $ gdb <exec>
    ```  
    
 2. Try to run the executable in gdb    
@@ -95,9 +95,9 @@ The output would look something like this:
     - The boxed portion ($rbp) would be able to tell us how much did we overwrite the buffer.   
       We can also use the following command to look it up.
       
-      ```
+      
       gef> x $rbp 
-      ```    
+          
     
 4. Look up the size of the buffer  
    ```
