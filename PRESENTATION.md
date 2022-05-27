@@ -118,7 +118,9 @@ The output would look something like this:
 
 ```console
 $ python3 -c "print('A'*(<offset>+8)+<address_of_function_in_correct_endian>)" > input.txt
-```
+```  
+![image](https://user-images.githubusercontent.com/64151468/170773900-53a10063-d7a5-4e99-8398-9ba28bf127c2.png)
+Big endian stores the most significant byte first while little endian stores the least significant byte first. This would vary depends on the computer.  
 
 example: 
 ```console
