@@ -46,7 +46,7 @@ with a little extra which will be handy for performing a buffer overflow attack.
 
 Installing GEF is fairly simple, as all you need to do is run the following command:
 ```
-$ curl -fsSL http://gef.blah.cat/sh | bash -c
+$ curl -fsSL http://gef.blah.cat/sh | bash
 ```
 
 [Read more](https://gef.readthedocs.io/en/master/)
