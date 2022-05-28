@@ -43,5 +43,9 @@ Yuqing - Added more images demonstrating how gdb works with examples. Fixing for
 ### 5/26  
 Yuqing - Added explainations on some of the things that may be confusing for presentation. 
 
+Wen Hao - Tried figuring out reverse shell code attack and started homework creation.
+
 ### 5/27  
 Yuqing - Added pictures explaining endianess and cyclic patterns.
+
+Wen Hao - Got tryhackme room vm set up, continued created homework.
