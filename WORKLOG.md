@@ -49,3 +49,6 @@ Wen Hao - Tried figuring out reverse shell code attack and started homework crea
 Yuqing - Added pictures explaining endianess and cyclic patterns.
 
 Wen Hao - Got tryhackme room vm set up, continued created homework.
+
+### 5/28
+Wen Hao - Added code injection to slides and added homework.
