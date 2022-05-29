@@ -170,9 +170,6 @@ and we can't be certain of what arguments and environmental variables the user r
 use, so the exact address of the buffer may shift up and down by a bit each time.
 
 However, we can increase the "landing zone" of our code by making use of "NOP slides."
-
-# NOP Slides
-
 NOP, or No Operation, is an instruction that tells the cpu to "do nothing" and move to the next instruction.
 
 ![NOP](https://user-images.githubusercontent.com/38366553/170850921-f8af1cb1-9e73-48ea-aa69-f81fb4a84ddf.png)
@@ -180,3 +177,26 @@ NOP, or No Operation, is an instruction that tells the cpu to "do nothing" and m
 So, if instead of just injection our malicious code into the buffer, we also add a large number of
 NOPs before it, as long as we set the return address to any of the NOPs, the instruction pointer will
 "slide" over all of them and run our injected code from the start.
+
+# ASLR
+
+By default, most modern OS's have address space layout randomization (ASLR) enabled, which randomly
+orders functions in memory before executing the program to make it more difficult to reliably
+use buffer overflows to jump to functions not meant to be executed.
+
+If you run a program using gdb, ASLR is disabled by default, but if you try running it outside of gdb,
+then you'd get a segmentation fault.
+```
+$ run < input.txt
+```
+
+There are techniques of bypassing this, but just for learning about buffer overflows, you can disable
+it temporarily using
+```
+$ echo 0 | sudo tee /proc/sys/kernel/randomize_va_space
+```
+and re-enable it with
+```
+$ echo 2 | sudo tee /proc/sys/kernel/randomize_va_space
+```
+if you're using Linux.
