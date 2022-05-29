@@ -52,3 +52,6 @@ Wen Hao - Got tryhackme room vm set up, continued created homework.
 
 ### 5/28
 Wen Hao - Added code injection to slides and added homework.
+
+### 5/29
+Wen Hao - Added explanation of ASLR in presentation.
