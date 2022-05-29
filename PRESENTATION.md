@@ -1,4 +1,4 @@
-# Executing malicious code with buffer overflows
+# Executing code with buffer overflows
 
 ![Call Stack](https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Call_stack_layout.svg/342px-Call_stack_layout.svg.png)
 
@@ -146,3 +146,37 @@ We have to first overwrite rbp (which is 8 bytes address) to reach where the sav
    And then you should see the output.
                        
 <img width="772" alt="Screen Shot 2022-05-25 at 3 11 30 PM" src="https://user-images.githubusercontent.com/64151468/170350970-5d8f1b4a-efaa-4681-9565-22c6596affab.png">
+
+# Code Injection
+
+Most modern programs forbid code that is stored in the stack from begin ran, but this isn't true in all cases.
+In gcc, you can enable stack execution with `$ gcc main.c -z execstack`.
+
+If a program is vulnerable to a buffer overflow and has stack execution enabled, you could potentially
+run your own code by sending a malicious payload into the program.
+
+![code injection](https://user-images.githubusercontent.com/38366553/170850793-353f125a-7c29-4172-8713-f7a1b13ad9a2.png)
+
+Let's say we have a very large buffer, if we first fill it up with our malicious code, then overwrite the return address to
+point to the start of the code. Then, once the function ends, it tries to return from the function, but instead it jumps
+to our malicious code and starts executing from there.
+
+Now, that's all well and good, but we can't be exactly sure that the address of the buffer is going to be the same everytime.
+
+![memory](https://user-images.githubusercontent.com/38366553/170850946-5a15c676-269a-44e8-b297-b40a0f04afb1.png)
+
+At the high addresses of memory, the program stores the command line arguments and environmental variables,
+and we can't be certain of what arguments and environmental variables the user running the program will
+use, so the exact address of the buffer may shift up and down by a bit each time.
+
+However, we can increase the "landing zone" of our code by making use of "NOP slides."
+
+# NOP Slides
+
+NOP, or No Operation, is an instruction that tells the cpu to "do nothing" and move to the next instruction.
+
+![NOP](https://user-images.githubusercontent.com/38366553/170850921-f8af1cb1-9e73-48ea-aa69-f81fb4a84ddf.png)
+
+So, if instead of just injection our malicious code into the buffer, we also add a large number of
+NOPs before it, as long as we set the return address to any of the NOPs, the instruction pointer will
+"slide" over all of them and run our injected code from the start.
